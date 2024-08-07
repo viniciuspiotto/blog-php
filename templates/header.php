@@ -1,6 +1,7 @@
 <?php
     include_once("helpers/url.php");
-
+    include_once("data/categories.php");
+    include_once("data/posts.php");
 ?>
 
 <!DOCTYPE html>
@@ -16,10 +17,8 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul id="navbar">
-                <li><a href="<?= $BASE_URL ?>" class="nav-link">Home</a></li>
-                <li><a href="<?= $BASE_URL ?>contact.php" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
+        <div id="title-container">
+            <h1>piotto.dev</h1>
+            <p>Alguns insights sobre programação</p>
+        </div>
     </header>

@@ -5,5 +5,6 @@
     'Clean Architecture',
     'Java',
     'Computer Science',
-    'Database'
+    'Database',
+    'Architecture'
   ];
