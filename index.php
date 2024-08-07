@@ -2,6 +2,10 @@
     include_once("templates/header.php");
 ?>
     <main>
+        <div id="hero-content">
+            <img src="<?= $BASE_URL ?>img/logo.svg" alt="piotto dev">
+            <p>Blog pessoal de um estudante de computação. O intuito principal é de destacar alguns conceitos importantes que eu vou adquirindo ao longo de minha jornada como desenvolvedor e cientista da computação.</p>
+        </div>
         <div id="posts-container">
             <?php foreach ($posts as $post): ?>
                 <div class="post-box">

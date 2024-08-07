@@ -1,11 +1,8 @@
 :root {
-    --primary-color: #776B5D;
-    --secondary-color: #B0A695;
-    --tertiary-color: #EBE3D5;
+    --primary-color: #132043;
+    --secondary-color: #1F4172;
     --white-color: #F3EEEA;
-    --black-color: #333333;
-    --grey-color: #4d4d4d;
-    --font-size: 16px;
+    --black-color: #2F2F2F;
 }
 
 * {
@@ -14,7 +11,7 @@
     margin: 0;
     box-sizing: border-box;
     font-size: 18px;
-    font-style: 500;
+    font-weight: 500;
 }
 
 html {
@@ -26,23 +23,63 @@ main {
     margin-bottom: 250px;
 }
 
-/*HOME*/
+/* NAVBAR */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    padding: 20px;
+    text-transform: uppercase;
+    list-style: none;
+}
+
+#navbar li {
+    margin: 0 10px;
+    padding: 5px;
+}
+
+#navbar .nav-link {
+    color: var(--white-color);
+    text-decoration: none;
+    transition: .5s;
+    font-size: 14px;
+}
+
+#navbar .nav-link:hover {
+    color: var(--secondary-color);
+}
+
+/* HOME */
+#hero-content {
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-height: 500px;
+    margin: 100px auto;
+}
+
+#hero-content p {
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 26px;
+}
+
 #title-container {
-    min-height: 50px;
+    min-width: 500px;
     text-align: center;
     margin-top: 30px;
 }
 
 #title-container h1 {
     font-size: 50px;
-    color: var(--black-color);
-    font-weight: 800;
 }
 
 #title-container p {
     margin-top: 10px;
     text-transform: uppercase;
-    color: var(--grey-color);
+    color: var(--black-color);
 }
 
 #posts-container {
@@ -70,24 +107,22 @@ main {
     width: 100%;
 }
 
-.post-title {
+.post-box .post-title {
     margin: 10px 0;
 }
 
 .post-box .post-title a {
+    font-size: 26px;
     color: var(--black-color);
-    text-decoration: none;   
-    font-size: 30px;
     transition: .5s;
 }
 
 .post-box .post-title a:hover {
-    color: var(--grey-color);
-    transition: .5s;
+    color: var(--primary-color);
 }
 
 .post-box .post-description {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .tags-container {
@@ -96,15 +131,90 @@ main {
 
 .tags-container a {
     font-size: 14px;
-    color: var(--white-color);
-    background-color: var(--grey-color);
-    padding: 5px 20px;
-    border-radius: 20px;
+    color: var(--black-color);
     display: inline-block;
     margin-right: 5px;
 }
 
-/*FOOTER*/
+/* POST */
+#post-container {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: auto;
+    grid-template-areas: "main sidebar";
+    grid-gap: 10px;
+    padding-top: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 250px;
+}
+
+.content-container {
+    grid-area: main;
+}
+
+#main-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+#post-description {
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+.post-content {
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.img-container {
+    margin-bottom: 30px;
+}
+
+.img-container img {
+    width: 60%;
+}
+
+/* POST ASIDE */
+.nav-container {
+    grid-area: sidebar;
+}
+
+#tags-title,
+#categories-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 10px;
+    font-weight: 300;
+}
+
+#tag-list,
+#categories-list {
+    list-style: none;
+}
+
+#tag-list li,
+#categories-list li {
+    margin-bottom: 10px;
+}
+
+#tag-list a,
+#categories-list a {
+    color: #666;
+    transition: .5s;
+}
+
+#tag-list a:hover,
+#categories-list a:hover {
+    color: var(--primary-color);
+}
+
+/* FOOTER */
+
 footer {
     width: 100%;
     position: absolute;
@@ -113,4 +223,53 @@ footer {
     background-color: var(--primary-color);
     color: var(--white-color);
     padding: 50px 0;
+}
+
+/* MOBILE */
+@media(max-width: 480px) {
+
+    /* HOME */
+    header {
+        width: 100%;
+    }
+
+    #logo {
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        left: 0;
+        width: 50px;
+    }
+
+    #navbar {
+        display: none;
+    }
+
+    #title-container {
+        min-width: 100%;
+        margin-top: 20px;
+    }
+
+    #posts-container {
+        margin-top: 20px;
+    }
+
+    .post-box {
+        flex: 100% 1 0;
+        padding: 15px;
+        margin: 0;
+    }
+
+    /* POST */
+    #post-container {
+        grid-template-columns: 100%;
+        padding: 15px;
+        grid-template-areas: "main"
+            "sidebar";
+    }
+
+    .img-container img {
+        width: 100%;
+    }
+
 }
